@@ -1,0 +1,72 @@
+package zohoFirst;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'miniMaxSum' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void miniMaxSum(List<Integer> arr) {
+    // Write your code here
+    long min=0;
+    long max=0;
+    long [] arr1 = new long [arr.size()];
+    for(int i=0; i<arr.size(); i++){
+        long sum = 0;
+        for(int j=0; j<arr.size(); j++){
+            if(i==j){
+                continue;
+            }
+            else{
+                sum += arr.get(j);
+            }
+            
+        }
+        arr1[i] = sum;
+        
+    }
+    long temp;
+    for(int i=0; i<arr1.length; i++){
+        for(int j=i+1; j<arr1.length; j++){
+            if(arr1[j] > arr1[i]){
+                temp = arr1[j];
+                arr1[j] = arr1[i];
+                arr1[i] = temp;
+            }
+        }
+    }
+    System.out.print(arr1[arr1.length-1] + " "+ arr1[0]);
+
+    }
+
+}
+
+public class MinMax{
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String[] arrTemp = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            int arrItem = Integer.parseInt(arrTemp[i]);
+            arr.add(arrItem);
+        }
+
+        Result.miniMaxSum(arr);
+
+        bufferedReader.close();
+    }
+}
+
