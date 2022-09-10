@@ -1,5 +1,3 @@
-package zohoFirst;
-
 class Merge {
     static int[] merge(int first[], int second[]) {
         System.out.println("Inside Merge");
@@ -82,5 +80,4 @@ class Merge {
         System.out.println("");
     }
 }
-
 

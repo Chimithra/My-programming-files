@@ -1,26 +1,29 @@
-package zohoFirst;
-import java.util.ArrayList;
+import javax.swing.*;
 
+interface Interface1{
+   default void getArea()
+   {
+       System.out.println("Interfacee1");
+   }
+}
+interface Interface2
+{
+    default void getArea()
+    {
+        System.out.println("Interfacee2");
+    }
+}
+// class chimithra implements Interface1,Interface2
+//{
+//    public void getArea() {
+//        System.out.println("1st method");
+//
+//    }
+//}
+public class new1 implements Interface2 {
+    public static void main(String[] args) {
+        new1 ch=new new1();
+        ch.getArea();
 
-class new1{
-	public static void main(String[] args){
-
-        // create an arraylist
-        ArrayList<Integer> oddNumbers = new ArrayList<>();
-        ArrayList<Integer> oddNumber1 = new ArrayList<>();
- 
-
-        // add elements to arraylist
-        oddNumbers.add(1);
-        oddNumbers.add(3);
-        oddNumbers.add(5);
-        System.out.println("Odd Number ArrayList: " + oddNumbers);
-        oddNumber1.add(3);
-        oddNumber1.add(2);
-        oddNumber1.add(4);
-
-        // remove all elements
-        oddNumbers.removeAll(oddNumber1);
-        System.out.println("ArrayList after removeAll(): " + oddNumbers);
     }
 }
